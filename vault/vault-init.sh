@@ -6,9 +6,9 @@
 
 set -e
 
-NAMESPACE="vault"
-POD_NAME="vault-0"
-OUTPUT_DIR="/home/henriqzimer/projetos/kubernetes/vault-credentials"
+NAMESPACE="secrets"
+POD_NAME="hashicorp-vault-0"
+OUTPUT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CREDS_FILE="$OUTPUT_DIR/vault-credentials.txt"
 JSON_FILE="$OUTPUT_DIR/vault-init-output.json"
 

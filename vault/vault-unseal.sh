@@ -8,7 +8,8 @@ set -e
 
 NAMESPACE="secrets"
 POD_NAME="hashicorp-vault-0"
-CREDS_FILE="./vault-credentials.txt"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CREDS_FILE="${CREDS_FILE:-$SCRIPT_DIR/vault-credentials.txt}"
 
 # Cores para output
 RED='\033[0;31m'

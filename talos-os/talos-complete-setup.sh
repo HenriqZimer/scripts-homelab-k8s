@@ -1064,6 +1064,11 @@ menu_create_cluster() {
         print_info "Para ativar os plugins, você precisa fornecer as credenciais."
         print_info "Deixe em branco para pular a configuração (pode configurar depois)."
         echo
+        print_warning "A mesma auth key do Tailscale sera aplicada em TODOS os nos (control planes e workers)."
+        print_warning "Se ela nao for 'Reusable', so o primeiro no consegue autenticar e os demais falham."
+        print_warning "No admin console do Tailscale: Settings > Keys > marque 'Reusable' ao gerar a key"
+        print_warning "(ou use um OAuth client secret em Settings > OAuth clients, que ja e reusavel por padrao)."
+        echo
 
         read -p "Tailscale Auth Key (tskey-auth-...): " TAILSCALE_AUTHKEY
         echo
